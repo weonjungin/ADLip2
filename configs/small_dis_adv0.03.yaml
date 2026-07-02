@@ -1,0 +1,48 @@
+run_name: small_dis_adv0.03
+data:
+  root: /media/HDD/ihjung/HDTF/processed
+  samples_per_video: 100
+  splits_dir: /home/ihjung/2026/ADLip2/data/splits
+  ref_repeat: true
+model:
+  ref_scale: 0.5
+  alpha: 0.35
+  dim: 512
+  num_heads: 8
+  spatial_layers: 2
+  temporal_layers: 2
+  audio_len: 5
+  ffn_dim_ratio: 4
+  dropout: 0.1
+  ndf: 32
+loss:
+  lambda_latent: 0.25
+  lambda_same: 0.01
+  lambda_diff: 0.01
+  diff_margin: 0.9
+  lambda_silence: 0.01
+  lambda_delta_reg: 0.01
+  lambda_smooth: 0.05
+  lambda_mouth: 0.0
+  lambda_sync: 0.15
+  sync_margin: 0.2
+  sync_temperature: 0.07
+  lambda_adv: 0.03
+  lambda_fm: 0.0
+  lambda_sync_fm: 0.05
+syncnet:
+  ckpt_path: /home/ihjung/MuseTalk/models/syncnet/latentsync_syncnet.pt
+train:
+  epochs: 27
+  lr: 3.0e-06
+  lr_d: 5.0e-06
+  d_freq: 2
+  batch_size: 2
+  num_workers: 4
+  seed: 42
+vae:
+  model_name: stabilityai/sd-vae-ft-mse
+results:
+  root: /home/ihjung/2026/ADLip2/results
+sample:
+  save_every: 3
