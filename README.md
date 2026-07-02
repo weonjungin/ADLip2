@@ -107,7 +107,7 @@ LatentSync loss와 SyncLT를 결합했을 때 42개 테스트 비디오 기준 *
 
 ## 체크포인트
 
-`.pt` 체크포인트는 용량 문제로 GitHub에 포함하지 않았습니다. Google Drive에서 받으실 수 있습니다: (링크 추가 예정)
+`.pt` 체크포인트는 용량 문제로 GitHub에 포함하지 않았습니다. Google Drive에서 받으실 수 있습니다: [Google Drive](https://drive.google.com/drive/folders/1kRF8PGcIMjcGzjbLZh6Jc6HIfCz-Z6Ek?usp=sharing)
 
 ## 관련 프로젝트
 
