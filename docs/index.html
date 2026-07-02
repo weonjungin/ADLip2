@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Audio-Driven Talking-Head Generation</title>
+  <style>
+    :root {
+      --navy: #112D4E;
+      --blue: #3F72AF;
+      --light-blue: #DBE2EF;
+      --bg: #F9F7F7;
+      --white: #FFFFFF;
+      --text: #112D4E;
+      --muted: #6B7280;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); font-family: 'Pretendard', 'Segoe UI', sans-serif; color: var(--text); }
+    .container { max-width: 1280px; margin: 0 auto; padding: 30px; }
+    .hero { background: linear-gradient(135deg, #112D4E 0%, #1D4F86 55%, #3F72AF 100%); border-radius: 18px; padding: 30px 42px; color: white; box-shadow: 0 12px 30px rgba(17,45,78,0.22); margin-bottom: 24px; text-align: center; }
+    .hero-title { font-size: 48px; font-weight: 900; line-height: 1.05; letter-spacing: -2px; margin: 0; }
+    .main-grid { display: grid; grid-template-columns: 1fr 90px 1fr; gap: 20px; align-items: stretch; }
+    .section-card { background: #FFFFFF; border: 1px solid #DBE2EF; border-radius: 16px; box-shadow: 0 10px 28px rgba(17,45,78,0.08); padding: 22px; height: 100%; min-width: 0; }
+    .card-title { font-size: 22px; font-weight: 850; color: #112D4E; margin-bottom: 8px; }
+    .card-desc { font-size: 15px; color: #6B7280; margin-bottom: 18px; line-height: 1.6; }
+    .loading-flow { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 260px; color: #3F72AF; }
+    .loading-circle { width: 46px; height: 46px; border: 5px solid #DBE2EF; border-top: 5px solid #3F72AF; border-radius: 50%; opacity: 0.35; animation: none; }
+    .loading-flow.active .loading-circle { opacity: 1; animation: spin 1s linear infinite; }
+    .loading-text { margin-top: 14px; font-size: 13px; font-weight: 800; color: #3F72AF; opacity: 0.45; }
+    .loading-flow.active .loading-text { opacity: 1; }
+    .flow-arrow { margin-top: 18px; font-size: 56px; font-weight: 900; color: #3F72AF; opacity: 0.55; line-height: 1; }
+    .loading-flow.active .flow-arrow { opacity: 1; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    label { display: block; color: #112D4E; font-weight: 800; font-size: 14px; margin: 16px 0 8px; }
+    input, select, textarea { width: 100%; border-radius: 12px; border: 1px solid #DBE2EF; padding: 12px; color: #112D4E; background: white; font-size: 14px; }
+    input[type="file"] { border: 2px dashed rgba(63,114,175,0.45); background: #F8FBFF; padding: 20px; color: #3F72AF; font-weight: 700; }
+    .button-row { display: flex; justify-content: center; margin-top: 18px; }
+    .button-row .primary-btn { width: calc((100% - 12px) / 2); }
+    button { border-radius: 10px; border: 1px solid #DBE2EF; font-weight: 850; min-height: 48px; cursor: pointer; transition: all 0.18s ease; font-size: 15px; }
+    button:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(17,45,78,0.15); }
+    button:disabled { cursor: not-allowed; opacity: 0.75; transform: none; box-shadow: none; }
+    .primary-btn { background: #3F72AF; color: white; border: none; }
+    .preview-box { background: #F8FBFF; border: 1px solid #DBE2EF; border-radius: 14px; padding: 14px; min-height: 240px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; }
+    .input-preview-box { min-height: 150px; margin-top: 10px; }
+    .empty-preview { color: #6B7280; font-size: 13px; text-align: center; line-height: 1.5; }
+    img, video, audio { width: 100%; border-radius: 14px; background: #EEF3FA; }
+    .hidden { display: none; }
+    .status { margin-top: 14px; padding: 12px; border-radius: 12px; background: #F8FBFF; border: 1px solid #DBE2EF; color: #112D4E; font-size: 14px; line-height: 1.6; white-space: pre-line; }
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } .loading-flow { min-height: 120px; } .hero-title { font-size: 36px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1 class="hero-title">Audio driven talking head generation</h1>
+    </section>
+    <main class="main-grid">
+      <section class="section-card">
+        <div class="card-title">Input</div>
+        <div class="card-desc">레퍼런스와 음성을 업로드합니다.</div>
+        <label>Reference Image</label>
+        <div class="preview-box"><img id="refPreview" src="ref.webp" alt="Reference Image" /></div>
+        <label>Audio</label>
+        <div class="preview-box"><video id="audioPreview" controls><source src="audio.mp4" type="video/mp4" /></video></div>
+        <div class="button-row"><button id="generateBtn" class="primary-btn" onclick="runGenerate()">Generation</button></div>
+        <div id="status" class="status">기본 레퍼런스 이미지와 오디오 영상이 적용되어 있습니다.</div>
+      </section>
+      <div id="loadingFlow" class="loading-flow">
+        <div class="loading-circle"></div>
+        <div class="loading-text">Generating</div>
+        <div class="flow-arrow">→</div>
+      </div>
+      <section class="section-card">
+        <div class="card-title">Result</div>
+        <div class="card-desc">생성된 talking-head 영상을 확인합니다.</div>
+        <label>Generated Video</label>
+        <div class="preview-box result-box">
+          <div id="resultEmpty" class="empty-preview">Generation 버튼을 누르면 20초 후 결과 영상이 표시됩니다.</div>
+          <video id="resultVideo" class="hidden" controls></video>
+        </div>
+      </section>
+    </main>
+  </div>
+<script>
+  const RESULT_VIDEO_PATH = "result.mp4";
+  function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+  function setLoading(isLoading) {
+    const loadingFlow = document.getElementById("loadingFlow");
+    const generateBtn = document.getElementById("generateBtn");
+    if (isLoading) {
+      loadingFlow.classList.add("active");
+      generateBtn.disabled = true;
+      generateBtn.innerText = "Generating...";
+    } else {
+      loadingFlow.classList.remove("active");
+      generateBtn.disabled = false;
+      generateBtn.innerText = "Generation";
+    }
+  }
+  async function runGenerate() {
+    const status = document.getElementById("status");
+    const resultEmpty = document.getElementById("resultEmpty");
+    const resultVideo = document.getElementById("resultVideo");
+    resultVideo.classList.add("hidden");
+    resultEmpty.classList.remove("hidden");
+    resultVideo.removeAttribute("src");
+    resultVideo.load();
+    status.innerText = "영상 생성 중입니다. 약 20초 후 결과가 표시됩니다.";
+    setLoading(true);
+    await sleep(20000);
+    resultVideo.src = RESULT_VIDEO_PATH + "?t=" + Date.now();
+    resultVideo.load();
+    resultEmpty.classList.add("hidden");
+    resultVideo.classList.remove("hidden");
+    status.innerText = "생성 완료.";
+    setLoading(false);
+  }
+</script>
+</body>
+</html>
