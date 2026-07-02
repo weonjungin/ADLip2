@@ -4,7 +4,7 @@ Audio-driven lip-sync 영상 생성 모델. MuseTalk을 기반으로, 입술 영
 
 ## 배경
 
-MuseTalk 등 기존 lip-sync 모델은 얼굴 전체 단위로 동기화를 학습(LatentSync loss)하기 때문에, 입술 자체의 미세한 움직임 정확도가 떨어지는 경우가 있었습니다. 이 프로젝트는 [lip-sync-score](https://github.com/weonjungin/lip-sync-score)에서 개발한 입술 특화 동기화 모델 **SyncNetTemporal(SyncLT)**을 MuseTalk 파이프라인에 결합해, 얼굴 전체 손실과 입술 손실을 함께 최적화합니다.
+MuseTalk 등 기존 lip-sync 모델은 얼굴 전체 단위로 동기화를 학습(LatentSync loss)하기 때문에, 입술 자체의 미세한 움직임 정확도가 떨어지는 경우가 있었습니다. 이 프로젝트는 [lip-sync-score](https://github.com/weonjungin/lip-sync-score)에서 개발한 입술 특화 동기화 모델 SyncNetTemporal(SyncLT)을 MuseTalk 파이프라인에 결합해, 얼굴 전체 손실과 입술 손실을 함께 최적화합니다.
 
 캡스톤 경진대회 평가는 4가지 조건(L1 only / LatentSync only / SyncLT only / LatentSync + SyncLT)으로 진행되었으며, 이 레포는 그중 SyncLT 단독 조건과 LatentSync + SyncLT 결합 조건을 다룹니다.
 
