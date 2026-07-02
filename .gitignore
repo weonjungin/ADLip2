@@ -1,20 +1,3 @@
-# Python
 __pycache__/
 *.pyc
-
-# Dataset
-data/
-
-# Training outputs
-results/
-eval_results/
-log/
-wandb/
-
-# Inference outputs
-inference/
-
-# Model weights
-*.pth
-*.pt
-*.ckpt
+.DS_Store

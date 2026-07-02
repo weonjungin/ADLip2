@@ -1,0 +1,70 @@
+nohup: ignoring input
+ref: RD_Radio1_000 | 프레임: 1874
+audio1: WRA_ShelleyMooreCapito0_000
+audio2: RD_Radio5_000
+[ref 인덱스] ExpA ref1=1309 ref2=228 ExpB/C=51
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+모델 로드 완료: results/D9_20260521_135302/best.pt
+ref VAE encode 중...
+z_ref: torch.Size([1874, 4, 12, 12])
+
+[ExpA] same audio(WRA_ShelleyMooreCapito0_000), diff ref
+saved: expA_ref1_ref1309.mp4
+saved: expA_ref2_ref228.mp4
+
+[ExpB] same ref=51, diff audio
+saved: expB_audio1_ref51.mp4
+saved: expB_audio2_ref51.mp4
+
+[ExpC] zero audio | ref=51
+saved: expC_zero_ref51.mp4
+
+완료: inference/D9
+ref: RD_Radio1_000 | 프레임: 1874
+audio1: WRA_ShelleyMooreCapito0_000
+audio2: RD_Radio5_000
+[ref 인덱스] ExpA ref1=1309 ref2=228 ExpB/C=51
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+모델 로드 완료: results/F2_20260520_150446/best.pt
+ref VAE encode 중...
+z_ref: torch.Size([1874, 4, 12, 12])
+
+[ExpA] same audio(WRA_ShelleyMooreCapito0_000), diff ref
+saved: expA_ref1_ref1309.mp4
+saved: expA_ref2_ref228.mp4
+
+[ExpB] same ref=51, diff audio
+saved: expB_audio1_ref51.mp4
+saved: expB_audio2_ref51.mp4
+
+[ExpC] zero audio | ref=51
+saved: expC_zero_ref51.mp4
+
+완료: inference/F2
+ref: RD_Radio1_000 | 프레임: 1874
+audio1: WRA_ShelleyMooreCapito0_000
+audio2: RD_Radio5_000
+[ref 인덱스] ExpA ref1=1309 ref2=228 ExpB/C=51
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+모델 로드 완료: results/F3_20260520_150803/best.pt
+ref VAE encode 중...
+z_ref: torch.Size([1874, 4, 12, 12])
+
+[ExpA] same audio(WRA_ShelleyMooreCapito0_000), diff ref
+saved: expA_ref1_ref1309.mp4
+saved: expA_ref2_ref228.mp4
+
+[ExpB] same ref=51, diff audio
+saved: expB_audio1_ref51.mp4
+saved: expB_audio2_ref51.mp4
+
+[ExpC] zero audio | ref=51
+saved: expC_zero_ref51.mp4
+
+완료: inference/F3

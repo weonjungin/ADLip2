@@ -1,0 +1,24 @@
+13:45:50 ref: RD_Radio1_000 | 프레임: 1874
+13:45:50 audio1: WRA_ShelleyMooreCapito0_000
+13:45:50 audio2: RD_Radio5_000
+13:45:50 [ref 인덱스] ExpA ref1=1309 ref2=228 ExpB/C=51
+13:45:50 HTTP Request: HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+13:45:50 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+13:45:50 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/stabilityai/sd-vae-ft-mse/31f26fdeee1355a5c34592e401dd41e45d25a493/config.json "HTTP/1.1 200 OK"
+13:45:50 HTTP Request: HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/31f26fdeee1355a5c34592e401dd41e45d25a493/diffusion_pytorch_model.safetensors.index.json "HTTP/1.1 404 Not Found"
+13:45:51 모델 로드 완료: results/D5_20260513_162646/best.pt
+13:45:51 ref VAE encode 중...
+13:45:55 z_ref: torch.Size([1874, 4, 12, 12])
+13:45:55 
+[ExpA] same audio(WRA_ShelleyMooreCapito0_000), diff ref
+13:46:41 saved: expA_ref1_ref1309.mp4
+13:47:26 saved: expA_ref2_ref228.mp4
+13:47:26 
+[ExpB] same ref=51, diff audio
+13:48:11 saved: expB_audio1_ref51.mp4
+13:48:22 saved: expB_audio2_ref51.mp4
+13:48:22 
+[ExpC] zero audio | ref=51
+13:49:06 saved: expC_zero_ref51.mp4
+13:49:06 
+완료: inference/D5

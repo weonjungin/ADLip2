@@ -1,0 +1,135 @@
+nohup: ignoring input
+W0528 20:30:24.837000 1619006 site-packages/torch/distributed/run.py:766] 
+W0528 20:30:24.837000 1619006 site-packages/torch/distributed/run.py:766] *****************************************
+W0528 20:30:24.837000 1619006 site-packages/torch/distributed/run.py:766] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0528 20:30:24.837000 1619006 site-packages/torch/distributed/run.py:766] *****************************************
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+latent: torch.Size([1, 4, 12, 12])
+latent: torch.Size([1, 4, 12, 12])latent: torch.Size([1, 4, 12, 12])
+
+Loaded: /home/jiweon/projects/ADLip2/results/G2_best.pt
+Loaded: /home/jiweon/projects/ADLip2/results/G2_best.ptLoaded: /home/jiweon/projects/ADLip2/results/G2_best.pt
+
+LatentSync loaded & frozen: /home/ihjung/MuseTalk/models/syncnet/latentsync_syncnet.pt
+Our SyncNetTemporal loaded & trainable: /home/jiweon/projects/lip-sync-score/logs/syncnet_hdtf/checkpoints/best.pth
+LatentSync loaded & frozen: /home/ihjung/MuseTalk/models/syncnet/latentsync_syncnet.pt
+Our SyncNetTemporal loaded & trainable: /home/jiweon/projects/lip-sync-score/logs/syncnet_hdtf/checkpoints/best.pth
+LatentSync loaded & frozen: /home/ihjung/MuseTalk/models/syncnet/latentsync_syncnet.pt
+Our SyncNetTemporal loaded & trainable: /home/jiweon/projects/lip-sync-score/logs/syncnet_hdtf/checkpoints/best.pth
+Discriminator 초기화 (ndf=32)
+Discriminator 초기화 (ndf=32)
+Discriminator 초기화 (ndf=32)
+  disc ckpt 불일치, 새로 초기화: Error(s) in loading state_dict for MouthDiscriminator:
+	size mismatch for conv1.0.weight: copying a param with shape torch.Size([32, 4, 3, 3]) from checkpoint, the shape in current model is torch.Size([32, 4, 4, 4]).
+	size mismatch for conv2.0.weight: copying a param with shape torch.Size([64, 32, 3, 3]) from checkpoint, the shape in current model is torch.Size([64, 32, 4, 4]).
+	size mismatch for conv3.0.weight: copying a param with shape torch.Size([128, 64, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 64, 4, 4]).
+  disc ckpt 불일치, 새로 초기화: Error(s) in loading state_dict for MouthDiscriminator:
+	size mismatch for conv1.0.weight: copying a param with shape torch.Size([32, 4, 3, 3]) from checkpoint, the shape in current model is torch.Size([32, 4, 4, 4]).
+	size mismatch for conv2.0.weight: copying a param with shape torch.Size([64, 32, 3, 3]) from checkpoint, the shape in current model is torch.Size([64, 32, 4, 4]).
+	size mismatch for conv3.0.weight: copying a param with shape torch.Size([128, 64, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 64, 4, 4]).
+  disc ckpt 불일치, 새로 초기화: Error(s) in loading state_dict for MouthDiscriminator:
+	size mismatch for conv1.0.weight: copying a param with shape torch.Size([32, 4, 3, 3]) from checkpoint, the shape in current model is torch.Size([32, 4, 4, 4]).
+	size mismatch for conv2.0.weight: copying a param with shape torch.Size([64, 32, 3, 3]) from checkpoint, the shape in current model is torch.Size([64, 32, 4, 4]).
+	size mismatch for conv3.0.weight: copying a param with shape torch.Size([128, 64, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 64, 4, 4]).
+train videos=317 samples=31700
+train videos=317 samples=31700
+train videos=317 samples=31700
+val videos=39 samples=3900
+체크포인트 epoch=30, epochs를 60로 자동 조정
+이어서 학습: epoch 31부터
+val videos=39 samples=3900
+체크포인트 epoch=30, epochs를 60로 자동 조정
+이어서 학습: epoch 31부터
+val videos=39 samples=3900
+체크포인트 epoch=30, epochs를 60로 자동 조정
+이어서 학습: epoch 31부터
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.514549255371094 z_gt std= 4.5145487785339355 mel_pos= torch.Size([2, 80, 52])
+  samples saved: epoch 0
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.598495006561279 z_gt std= 4.5984954833984375 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.256015300750732 z_gt std= 4.256015300750732 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.616292953491211 z_gt std= 4.616292953491211 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.532700061798096 z_gt std= 4.532700061798096 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.383298397064209 z_gt std= 4.383298397064209 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.481805801391602 z_gt std= 4.481805801391602 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.474025726318359 z_gt std= 4.474025726318359 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.668704986572266 z_gt std= 4.668704986572266 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.565078258514404 z_gt std= 4.5650787353515625 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.6691741943359375 z_gt std= 4.669174671173096 mel_pos= torch.Size([2, 80, 52])
+[DEBUG our input] z_out_A= torch.Size([2, 16, 4, 12, 12]) z_out_scaled std= 4.482292175292969 z_gt std= 4.4822916984558105 mel_pos= torch.Size([2, 80, 52])
+[ep31 iter100] loss=0.6311 latent=1.4279 same=0.3706 diff=0.0000 dist=4.7076 sil=0.0084 smo=0.6581 sync=0.0001 pos=0.7672 neg=0.0822 gan=0.2265 disc=0.2797 fm=0.1812 our=0.7634 d_pos=1.2355 d_neg=1.2228 delta_A=4.3257 dn=4.3257 grad_gen=6.1602 grad_our=0.3806
+[ep31 iter200] loss=0.6592 latent=1.5414 same=0.4019 diff=0.0000 dist=6.7458 sil=0.0071 smo=0.6055 sync=0.0001 pos=0.7573 neg=0.0268 gan=0.2957 disc=0.2545 fm=0.2346 our=0.5331 d_pos=1.0325 d_neg=1.0791 delta_A=4.6146 dn=4.6146 grad_gen=6.0589 grad_our=0.3359
+[ep31 iter300] loss=0.6195 latent=1.4897 same=0.4366 diff=0.0000 dist=5.4371 sil=0.0070 smo=0.6933 sync=0.0007 pos=0.5813 neg=0.0727 gan=0.3526 disc=0.2276 fm=0.2051 our=0.4249 d_pos=0.9051 d_neg=0.8933 delta_A=4.9537 dn=4.9537 grad_gen=1.9638 grad_our=0.2085
+[ep31 iter400] loss=0.6200 latent=1.5518 same=0.3141 diff=0.0000 dist=4.1580 sil=0.0061 smo=0.5182 sync=0.0019 pos=0.5878 neg=0.0141 gan=0.3100 disc=0.2245 fm=0.2117 our=0.3580 d_pos=0.7694 d_neg=0.7777 delta_A=4.1974 dn=4.1974 grad_gen=1.9298 grad_our=0.1087
+[ep31 iter500] loss=0.5982 latent=1.4264 same=0.3767 diff=0.0000 dist=7.9221 sil=0.0070 smo=0.8008 sync=0.0002 pos=0.7404 neg=0.1229 gan=0.3026 disc=0.2316 fm=0.2100 our=0.3652 d_pos=0.7963 d_neg=0.8042 delta_A=4.9334 dn=4.9334 grad_gen=0.7819 grad_our=0.0620
+[ep31 iter600] loss=0.6096 latent=1.5622 same=0.5707 diff=0.0000 dist=6.0700 sil=0.0066 smo=0.7113 sync=0.0001 pos=0.8711 neg=0.1703 gan=0.3392 disc=0.2162 fm=0.1725 our=0.3522 d_pos=0.7331 d_neg=0.7418 delta_A=4.8943 dn=4.8943 grad_gen=1.2425 grad_our=0.0497
+[ep31 iter700] loss=0.6496 latent=1.6715 same=0.6827 diff=0.0000 dist=4.0532 sil=0.0066 smo=0.5865 sync=0.0001 pos=0.6912 neg=0.0114 gan=0.3312 disc=0.2161 fm=0.2084 our=0.3526 d_pos=0.7106 d_neg=0.7175 delta_A=4.4920 dn=4.4920 grad_gen=0.8385 grad_our=0.0366
+[ep31 iter800] loss=0.5898 latent=1.5104 same=0.4612 diff=0.0000 dist=3.9922 sil=0.0067 smo=0.7652 sync=0.0000 pos=0.8373 neg=0.0333 gan=0.3386 disc=0.2152 fm=0.1790 our=0.3523 d_pos=0.6886 d_neg=0.6969 delta_A=4.2264 dn=4.2264 grad_gen=5.1621 grad_our=0.0382
+[ep31 iter900] loss=0.6071 latent=1.5901 same=0.4504 diff=0.0000 dist=6.3126 sil=0.0076 smo=0.5863 sync=0.0115 pos=0.7941 neg=0.4627 gan=0.3086 disc=0.2148 fm=0.1676 our=0.3521 d_pos=0.7129 d_neg=0.7214 delta_A=4.1215 dn=4.1215 grad_gen=4.3486 grad_our=0.0384
+[ep31 iter1000] loss=0.6118 latent=1.5326 same=0.4721 diff=0.0000 dist=5.5445 sil=0.0074 smo=0.6640 sync=0.0008 pos=0.7724 neg=0.2426 gan=0.2970 disc=0.2164 fm=0.2049 our=0.3518 d_pos=0.6999 d_neg=0.7078 delta_A=4.5071 dn=4.5071 grad_gen=0.7625 grad_our=0.0265
+[ep31 iter1100] loss=0.6231 latent=1.5999 same=0.4624 diff=0.0000 dist=5.3546 sil=0.0067 smo=0.7509 sync=0.0032 pos=0.7596 neg=0.3562 gan=0.3250 disc=0.2093 fm=0.1714 our=0.3662 d_pos=0.7458 d_neg=0.7387 delta_A=5.0382 dn=5.0382 grad_gen=0.5957 grad_our=0.0396
+[ep31 iter1200] loss=0.6620 latent=1.4431 same=0.3872 diff=0.0000 dist=3.2153 sil=0.0061 smo=0.6464 sync=0.2346 pos=0.7052 neg=0.4430 gan=0.3344 disc=0.2102 fm=0.1546 our=0.3609 d_pos=0.7829 d_neg=0.7921 delta_A=4.2505 dn=4.2505 grad_gen=2.4520 grad_our=0.0441
+[ep31 iter1300] loss=0.7028 latent=1.6382 same=0.6058 diff=0.0000 dist=3.4094 sil=0.0061 smo=0.6477 sync=0.1600 pos=0.7456 neg=0.6025 gan=0.3147 disc=0.2109 fm=0.2026 our=0.3581 d_pos=0.6841 d_neg=0.6851 delta_A=4.5261 dn=4.5261 grad_gen=1.2511 grad_our=0.0302
+[epoch 31] total=0.6307 latent=1.5412 same=0.4611 diff=0.0003 silence=0.0067 delta_reg=4.4226 smooth=0.6294 sync=0.0247 adv=0.3114 d_loss=0.2358 our=0.4375 dn=4.4221
+[ep32 iter1400] loss=0.5970 latent=1.3550 same=0.3310 diff=0.0000 dist=4.6928 sil=0.0064 smo=0.6738 sync=0.1514 pos=0.6857 neg=0.5577 gan=0.3144 disc=0.2101 fm=0.1298 our=0.3449 d_pos=0.7202 d_neg=0.7404 delta_A=4.4796 dn=4.4796 grad_gen=1.0613 grad_our=0.0432
+[ep32 iter1500] loss=0.6976 latent=1.8498 same=0.6975 diff=0.0000 dist=3.1772 sil=0.0067 smo=0.6725 sync=0.0006 pos=0.6862 neg=0.1063 gan=0.3132 disc=0.2062 fm=0.2157 our=0.3512 d_pos=0.7297 d_neg=0.7414 delta_A=4.2167 dn=4.2167 grad_gen=1.2186 grad_our=0.0301
+[ep32 iter1600] loss=0.5388 latent=1.3265 same=0.3075 diff=0.0000 dist=3.1967 sil=0.0054 smo=0.5432 sync=0.0188 pos=0.7011 neg=0.1670 gan=0.2895 disc=0.2117 fm=0.1394 our=0.3620 d_pos=0.7201 d_neg=0.7139 delta_A=4.4550 dn=4.4550 grad_gen=0.9890 grad_our=0.0254
+[ep32 iter1700] loss=0.5502 latent=1.3994 same=0.3326 diff=0.0000 dist=4.3668 sil=0.0069 smo=0.6335 sync=0.0015 pos=0.8029 neg=0.2666 gan=0.3172 disc=0.2083 fm=0.1357 our=0.3471 d_pos=0.7086 d_neg=0.7231 delta_A=4.2838 dn=4.2838 grad_gen=0.5905 grad_our=0.0508
+[ep32 iter1800] loss=0.5655 latent=1.3289 same=0.3654 diff=0.0000 dist=3.0435 sil=0.0058 smo=0.4597 sync=0.1111 pos=0.5831 neg=0.1400 gan=0.3008 disc=0.2072 fm=0.1314 our=0.3665 d_pos=0.7222 d_neg=0.7115 delta_A=4.3498 dn=4.3498 grad_gen=2.4671 grad_our=0.0312
+[ep32 iter1900] loss=0.7115 latent=1.6203 same=0.5330 diff=0.0000 dist=4.1632 sil=0.0078 smo=0.5471 sync=0.2339 pos=0.7932 neg=0.6949 gan=0.3409 disc=0.2038 fm=0.1719 our=0.3581 d_pos=0.7344 d_neg=0.7346 delta_A=4.1661 dn=4.1661 grad_gen=0.6988 grad_our=0.0363
+[ep32 iter2000] loss=0.6775 latent=1.5595 same=0.6511 diff=0.0000 dist=4.7653 sil=0.0061 smo=0.6902 sync=0.1881 pos=0.7514 neg=0.6363 gan=0.3121 disc=0.2074 fm=0.1617 our=0.3393 d_pos=0.7251 d_neg=0.7562 delta_A=3.8719 dn=3.8719 grad_gen=0.6268 grad_our=0.0384
+[ep32 iter2100] loss=0.6283 latent=1.6180 same=0.7140 diff=0.0000 dist=3.2693 sil=0.0085 smo=0.6695 sync=0.0000 pos=0.7649 neg=0.0325 gan=0.3253 disc=0.2039 fm=0.1779 our=0.3558 d_pos=0.7291 d_neg=0.7320 delta_A=4.9041 dn=4.9041 grad_gen=1.1066 grad_our=0.0507
+[ep32 iter2200] loss=1.0717 latent=1.6522 same=0.5070 diff=0.0000 dist=2.4477 sil=0.0055 smo=0.3628 sync=1.0444 pos=0.6974 neg=0.7128 gan=0.3485 disc=0.2084 fm=0.2233 our=0.3618 d_pos=0.7318 d_neg=0.7279 delta_A=3.7807 dn=3.7807 grad_gen=4.4360 grad_our=0.0349
+[ep32 iter2300] loss=0.6510 latent=1.6316 same=0.4812 diff=0.0000 dist=4.7893 sil=0.0084 smo=0.8682 sync=0.0172 pos=0.7633 neg=0.3951 gan=0.2956 disc=0.2011 fm=0.2098 our=0.3483 d_pos=0.6901 d_neg=0.7041 delta_A=4.3334 dn=4.3334 grad_gen=2.2780 grad_our=0.0388
+[ep32 iter2400] loss=0.5512 latent=1.4131 same=0.2868 diff=0.0000 dist=4.8515 sil=0.0068 smo=0.8520 sync=0.0006 pos=0.7736 neg=0.1381 gan=0.3224 disc=0.2032 fm=0.1378 our=0.3572 d_pos=0.6745 d_neg=0.6779 delta_A=4.6568 dn=4.6568 grad_gen=4.3638 grad_our=0.0433
+[ep32 iter2500] loss=0.5322 latent=1.3523 same=0.2834 diff=0.0000 dist=5.5951 sil=0.0064 smo=0.7468 sync=0.0002 pos=0.7601 neg=0.1744 gan=0.3039 disc=0.2068 fm=0.1428 our=0.3252 d_pos=0.7166 d_neg=0.7676 delta_A=4.8772 dn=4.8772 grad_gen=3.2994 grad_our=0.0321
+[ep32 iter2600] loss=0.6034 latent=1.5290 same=0.3612 diff=0.0000 dist=4.9424 sil=0.0066 smo=0.8345 sync=0.0034 pos=0.8486 neg=0.4425 gan=0.2959 disc=0.2000 fm=0.1850 our=0.3423 d_pos=0.6961 d_neg=0.7200 delta_A=4.9573 dn=4.9573 grad_gen=0.7576 grad_our=0.0413
+[epoch 32] total=0.6126 latent=1.5437 same=0.4915 diff=0.0004 silence=0.0065 delta_reg=4.3789 smooth=0.6195 sync=0.0281 adv=0.3184 d_loss=0.2053 our=0.3523 dn=4.3765
+[ep33 iter2700] loss=0.6314 latent=1.6155 same=0.5296 diff=0.0000 dist=3.9071 sil=0.0060 smo=0.5742 sync=0.0005 pos=0.7622 neg=0.2002 gan=0.3244 disc=0.2078 fm=0.2064 our=0.3540 d_pos=0.7316 d_neg=0.7397 delta_A=4.0303 dn=4.0303 grad_gen=1.9239 grad_our=0.0523
+[ep33 iter2800] loss=0.7693 latent=2.0034 same=0.5522 diff=0.0000 dist=4.7872 sil=0.0076 smo=0.5622 sync=0.0352 pos=0.4651 neg=0.2244 gan=0.2988 disc=0.1991 fm=0.2439 our=0.3780 d_pos=0.6791 d_neg=0.6566 delta_A=4.4069 dn=4.4069 grad_gen=2.0838 grad_our=0.0646
+[ep33 iter2900] loss=0.6378 latent=1.5558 same=0.3967 diff=0.0000 dist=5.8446 sil=0.0070 smo=0.5773 sync=0.0023 pos=0.6889 neg=0.0483 gan=0.3130 disc=0.2048 fm=0.2214 our=0.3501 d_pos=0.7239 d_neg=0.7400 delta_A=5.4449 dn=5.4449 grad_gen=0.6935 grad_our=0.0666
+[ep33 iter3000] loss=0.6136 latent=1.5991 same=0.6700 diff=0.0000 dist=3.5008 sil=0.0081 smo=0.5263 sync=0.0037 pos=0.7704 neg=0.3587 gan=0.3447 disc=0.2019 fm=0.1612 our=0.3615 d_pos=0.7552 d_neg=0.7550 delta_A=4.2141 dn=4.2141 grad_gen=8.0642 grad_our=0.0532
+[ep33 iter3100] loss=0.5395 latent=1.3549 same=0.3018 diff=0.0000 dist=4.5220 sil=0.0053 smo=0.6188 sync=0.0005 pos=0.6272 neg=0.0871 gan=0.3283 disc=0.1996 fm=0.1547 our=0.3252 d_pos=0.6569 d_neg=0.7054 delta_A=4.4679 dn=4.4679 grad_gen=0.8027 grad_our=0.0550
+[ep33 iter3200] loss=0.6088 latent=1.5869 same=0.4550 diff=0.0000 dist=3.3303 sil=0.0064 smo=0.6924 sync=0.0065 pos=0.6697 neg=0.3101 gan=0.3647 disc=0.1970 fm=0.1809 our=0.3183 d_pos=0.6625 d_neg=0.7219 delta_A=4.1351 dn=4.1351 grad_gen=0.7380 grad_our=0.0939
+[ep33 iter3300] loss=0.5140 latent=1.3066 same=0.2977 diff=0.0000 dist=5.2600 sil=0.0065 smo=0.6293 sync=0.0009 pos=0.7546 neg=0.1999 gan=0.3181 disc=0.2037 fm=0.1300 our=0.3484 d_pos=0.7244 d_neg=0.7383 delta_A=4.3494 dn=4.3494 grad_gen=3.9653 grad_our=0.0605
+[ep33 iter3400] loss=0.4762 latent=1.2099 same=0.3287 diff=0.0000 dist=4.8070 sil=0.0055 smo=0.5623 sync=0.0000 pos=0.8312 neg=0.0628 gan=0.3067 disc=0.2064 fm=0.1259 our=0.2552 d_pos=0.6430 d_neg=0.8036 delta_A=4.5701 dn=4.5701 grad_gen=1.6831 grad_our=0.0950
+[ep33 iter3500] loss=0.5704 latent=1.3875 same=0.4094 diff=0.0000 dist=5.5107 sil=0.0059 smo=0.7573 sync=0.0001 pos=0.9073 neg=0.2049 gan=0.2823 disc=0.1989 fm=0.1980 our=0.3476 d_pos=0.7392 d_neg=0.7597 delta_A=4.2666 dn=4.2666 grad_gen=1.6764 grad_our=0.1240
+W0528 23:44:40.037000 1619006 site-packages/torch/distributed/elastic/agent/server/api.py:719] Received Signals.SIGHUP death signal, shutting down workers
+W0528 23:44:40.038000 1619006 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1619040 closing signal SIGHUP
+W0528 23:44:40.038000 1619006 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1619041 closing signal SIGHUP
+W0528 23:44:40.038000 1619006 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1619042 closing signal SIGHUP
+Traceback (most recent call last):
+  File "/home/jiweon/.conda/envs/adlip/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    result = agent.run()
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 711, in run
+    result = self._invoke_run(role)
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 870, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/home/jiweon/.conda/envs/adlip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 1619006 got signal: 1
